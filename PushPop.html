@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PushPop</title>
+</head>
+<body>
+	<input id="box" type="text" name="box">
+	<input type="button" name="push" id="push" value="push">
+	<input type="button" name="pop" id="pop" value="Pop" >
+	<br>
+	<textarea id="opt"></textarea>
+
+	<script type="text/javascript">
+	
+	document.getElementById('push').addEventListener('click',pu);
+	document.getElementById('pop').addEventListener('click',po);
+	
+	function pu()
+	{
+	var c=document.getElementById('box').value
+	c=c.trim();
+	document.getElementById('opt').value+=c;
+	c="";
+	}
+	
+	function po()
+	{
+	var c=document.getElementById('opt');
+	var v=c.value.trim().lastIndexOf(" ");
+	c.value=c.value.substring(0,v);
+	}
+	</script>
+</body>
+</html>

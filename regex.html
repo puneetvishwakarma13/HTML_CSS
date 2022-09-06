@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex</title>
+    <style>
+        form{
+          text-align: center;
+          padding: 40px;
+        }
+        #in{
+            margin-top: 80px;
+            margin-bottom: 160px;
+        }
+        input{
+            border: solid 2px black;
+            width: 40%;
+        }
+        textarea{
+            border: solid 2px black;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+
+        button{
+            width: 10%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <div id="in">
+            <label for="inputbox"> Enter your text here</label>
+            <input type="text" id="inputbox">
+        </div>
+        <div id="txt">
+        <textarea name="area" id="area" rows="4"></textarea>
+        </div>
+        <div>
+            <Button id="res">Reset</Button>
+        </div>
+    </form>
+
+    <script> 
+        const regex = /\d/;
+        const reg = /[a-zA-z]/;
+        var box = document.getElementById('area');
+        var flag = 0;
+        document.getElementById('inputbox').addEventListener("keydown",function(e){
+            if(e.key.match(regex)){
+                box.innerHTML+= "Number, ";
+            }
+            else if (e.key.match(reg)){
+                box.innerHTML+= "letter, ";
+            }
+            else{
+                box.innerHTML += "Special Keys ";
+            }
+            
+        })
+
+        document.getElementById(res).addEventListener("click",function(){
+            box.innerHTML = "";
+        })
+    </script>
+</body>
+</html>
